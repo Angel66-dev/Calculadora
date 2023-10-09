@@ -3,6 +3,7 @@ package com.l20290957.calculadora;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity
     ImageView btnBack;
     ImageView btnJoss;
     ImageView btnAngel;
+    Button btnHistorial;
+
+    ArrayList<String> historialOperaciones = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity
         btnBack = findViewById(R.id.btn_back);
         btnJoss = findViewById(R.id.btn_Joss);
         btnAngel = findViewById(R.id.btn_Angel);
+        btnHistorial = findViewById(R.id.btn_Historial);
 
     }
 
@@ -67,6 +72,7 @@ public class MainActivity extends AppCompatActivity
 
         if(result != null)
             resultsTV.setText(String.valueOf(result.doubleValue()));
+            historialOperaciones.add(workings + "=" + String.valueOf(result.doubleValue()));
 
     }
 
@@ -229,40 +235,23 @@ public class MainActivity extends AppCompatActivity
 
 
     public void btnJoss(View view) {
-        btnJoss.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),
-                        UserDashboardActivityJoss.class);
-                startActivityForResult(intent, 0);
-
-            }
-        });
+        Intent intent = new Intent(this, UserDashboardActivityJoss.class);
+        startActivity(intent);
     }
 
     public void btnAngel(View view) {
-        btnAngel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),
-                        UserDashboardActivityAngel.class);
-                startActivityForResult(intent, 0);
-
-            }
-        });
+        Intent intent = new Intent(this, UserDashboardActivityAngel.class);
+        startActivity(intent);
     }
 
     public void btnBack(View view) {
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),
-                        MainActivity.class);
-                startActivityForResult(intent, 0);
-
-            }
-        });
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
-
+    public void btnHistorial(View view) {
+        Intent intent = new Intent(this, Historial.class);
+        intent.putStringArrayListExtra("historialOperaciones", historialOperaciones);
+        startActivity(intent);
+    }
 }

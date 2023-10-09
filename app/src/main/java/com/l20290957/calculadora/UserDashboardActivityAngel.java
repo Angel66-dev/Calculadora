@@ -13,7 +13,7 @@ public class UserDashboardActivityAngel extends AppCompatActivity {
     ImageView btnBack;
     ImageView btnJoss;
     ImageView btnAngel;
-    ImageView btnUsers;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,39 +31,18 @@ public class UserDashboardActivityAngel extends AppCompatActivity {
     }
 
     public void btnJoss(View view) {
-        btnJoss.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),
-                        UserDashboardActivityJoss.class);
-                startActivityForResult(intent, 0);
-
-            }
-        });
+        Intent intent = new Intent(this, UserDashboardActivityJoss.class);
+        startActivity(intent);
+        finish();
     }
 
     public void btnAngel(View view) {
-        btnAngel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),
-                        UserDashboardActivityAngel.class);
-                startActivityForResult(intent, 0);
-
-            }
-        });
+        Intent intent = new Intent(this, UserDashboardActivityAngel.class);
+        startActivity(intent);
     }
 
     public void btnBack(View view) {
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),
-                        MainActivity.class);
-                startActivityForResult(intent, 0);
-
-            }
-        });
+        finish();
     }
 
 

@@ -78,6 +78,17 @@
                 android:text="C"/>
 
             <Button
+                android:id="@+id/btn_Historial"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/naranja"
+                android:onClick="btnHistorial"
+                android:paddingStart="25dp"
+                android:drawableLeft="@drawable/baseline_history_24"/>
+
+            <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -87,17 +98,6 @@
                 android:onClick="bracketsOnClick"
                 android:textColor="@color/black"
                 android:text="( )"/>
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:textSize="40sp"
-                android:backgroundTint="@color/naranja"
-                android:textColor="@color/black"
-                android:onClick="powerOfOnClick"
-                android:text="^"/>
 
             <Button
                 android:layout_width="0dp"
