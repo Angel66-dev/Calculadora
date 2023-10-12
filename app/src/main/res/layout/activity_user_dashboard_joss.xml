@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:text="Joselin Betzabe Hernandez Quiroz"
+            android:text="Josselyn Betzabe Hernandez Quiroz"
             android:textColor="#999999"
             android:textStyle="bold"
             android:textSize="30sp"
